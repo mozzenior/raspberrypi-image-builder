@@ -140,7 +140,6 @@ config_timezone()
     cat <<SHELL > rootfs/etc/cron.daily/ntpdate
 #/bin/bash -e
 ntpdate $NTPSERVER
-hwclock -w
 SHELL
     chmod +x rootfs/etc/cron.daily/ntpdate
 }
