@@ -124,6 +124,7 @@ FSTAB
 config_hostname()
 {
     echo $HOSTNAME > rootfs/etc/hostname
+    echo "127.0.1.1       $HOSTNAME" >> rootfs/etc/hosts
 }
 
 config_timezone()
