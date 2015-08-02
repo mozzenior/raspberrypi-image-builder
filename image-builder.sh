@@ -138,8 +138,8 @@ config_timezone()
     cp rootfs/usr/share/zoneinfo/$TIMEZONE rootfs/etc/localtime
 
     cat <<SHELL > rootfs/etc/cron.daily/ntpdate
-#/bin/bash -e
-ntpdate $NTPSERVER
+#/bin/sh
+/usr/sbin/ntpdate $NTPSERVER
 SHELL
     chmod +x rootfs/etc/cron.daily/ntpdate
 }
